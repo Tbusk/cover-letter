@@ -1,0 +1,120 @@
+\documentclass[11pt, letterpaper]{article}
+
+% import packages
+\usepackage[empty]{fullpage}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{ulem}
+
+% -------------------------------------------------------------------------------------------------------------------- %
+% Imports commands from source files
+\input{src/Header}
+\input{src/CircleList}
+\input{src/BulletList}
+\input{src/EmptyList}
+\input{src/PlainItem}
+\input{src/ContactDetails}
+\input{src/Paragraph}
+\input{src/Closing}
+\input{src/IntroLine}
+
+% -------------------------------------------------------------------------------------------------------------------- %
+\pagestyle{fancy}
+\fancyhf{}  % clear header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt} % removes header line
+\renewcommand{\footrulewidth}{0pt} % removes footer line
+
+\raggedbottom
+\raggedright
+
+\setlength{\tabcolsep}{0in}
+
+% remove extra left margin
+\addtolength{\oddsidemargin}{-0.5in}
+% remove extra right margin
+\addtolength{\evensidemargin}{-0.5in}
+% extend text further right
+\addtolength{\textwidth}{1in}
+% remove extra top margin
+\addtolength{\topmargin}{-0.5in}
+% increase text height; required in order to make use of lower portion of the page
+\addtolength{\textheight}{1in}
+
+% generate correct unicode codepoints
+\pdfgentounicode=1
+
+% -------------------------------------------------------------------------------------------------------------------- %
+
+% define parameters to be used
+
+% my details
+\def\myName{Trevor Busk}
+\def\myPhoneNumberCondensed{+12695125088}
+\def\myPhoneNumberPretty{269-512-5088}
+\def\myEmailAddress{trevor@tbusk.com}
+\def\myWebsite{tbusk.com}
+\def\myLinkedIn{linkedin.com/in/trevor-busk}
+\def\myGitHub{github.com/tbusk}
+
+% hiring manager details
+\def\hiringManagersFirstName{John}
+\def\hiringManagersLastName{Doe}
+\def\hiringManagersPrefix{Mr.}
+\def\hiringManagersPhoneNumber{(123) 456-7890}
+\def\hiringManagersEmailAddress{john.doe@example.com}
+
+% company details
+\def\companyName{ABC Corporation}
+\def\companyAddress{123 Sample Avenue, NY}
+
+% how you want to address the hiring manager
+\def\introPrefix{Dear}
+
+% how you want to end the document
+\def\closing{Warm regards}
+
+% spacing between the items
+\def\itemSep{\vspace{8pt}}
+\def\negativeItemSep{\vspace{-8pt}}
+
+% spacing between the closing and your name
+\def\closingSep{\vspace{16pt}}
+
+% -------------------------------------------------------------------------------------------------------------------- %
+
+\begin{document}
+
+    % adds a header with your name and contact details
+    \rHeader
+
+    % add additional space between section title and content
+    \vspace{4pt}
+
+    % populates today's date
+    \today
+
+    % populates contact details section
+    \rContactDetails
+
+    % populates intro line
+    \rIntroLine
+
+    % ---------------------------------------------------------------------------------------------------------------- %
+
+    % add your paragraphs here
+
+    \rParagraph{TEST PARAGRAPH \#1}
+
+    \rParagraph{TEST PARAGRAPH \#2}
+
+    \rParagraph{TEST PARAGRAPH \#3}
+
+    % ---------------------------------------------------------------------------------------------------------------- %
+
+    % populates closing section
+    \rClosing
+
+\end{document}
